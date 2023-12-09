@@ -1,0 +1,12 @@
+.Switch {
+  width: 1em;
+  height: 1em;
+  border: 1px solid #999;
+  cursor: pointer;
+
+  &>div {
+    width: 0.5em;
+    height: 0.5em;
+    background-color: #333;
+  }
+}

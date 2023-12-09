@@ -1,0 +1,14 @@
+{
+  "name": "design",
+  "description": "一个简单易用，方便扩展和集成的移动端页面编辑器。",
+  "version": "1.0.0",
+  "dependencies": [
+    "duxapp"
+  ],
+  "npm": {
+    "dependencies": {
+      "react-dnd": "^16.0.1",
+      "react-dnd-html5-backend": "^16.0.1"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.ObjectArrayForm {
+  white-space: nowrap; /* 防止换行 */
+  // overflow-x: auto; /* 或者 scroll */
+  table {
+    display: inline-block;
+    border-collapse: collapse; /* 合并单元格边框 */
+    td {
+      border: 1px solid #f2f2f2; /* 设置边框样式 */
+      padding: 0.2em;
+    }
+    th {
+      border: 1px solid #f2f2f2; /* 设置边框样式 */
+      padding: 0.2em;
+    }
+  }
+  .Input {
+    border: none;
+  }
+}
