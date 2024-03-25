@@ -1,0 +1,51 @@
+.DesignText {
+
+  &-bold {
+    font-weight: bold;
+  }
+
+  &-nobold {
+    font-weight: normal;
+  }
+
+  &-underline {
+    text-decoration: underline;
+  }
+
+  &-delete {
+    text-decoration: line-through;
+  }
+  &-c1 {
+    color: var(--design-text-color1)
+  }
+  &-c2 {
+    color: var(--design-text-color2)
+  }
+  &-c3 {
+    color: var(--design-text-color3)
+  }
+  &-c4 {
+    color: var(--design-text-color4)
+  }
+
+  /*postcss-pxtransform rn eject enable*/
+  &-ellipsis {
+    //超出一行文字自动隐藏
+    overflow: hidden;
+    //文字隐藏后添加省略号
+    text-overflow: ellipsis;
+    //强制不换行
+    white-space: nowrap;
+
+    &--more {
+      display: -webkit-box;
+      overflow: hidden;
+
+      /*! autoprefixer: ignore next */
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+    }
+  }
+
+  /*postcss-pxtransform rn eject disable*/
+}

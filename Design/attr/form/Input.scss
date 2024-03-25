@@ -1,0 +1,61 @@
+.DesignInput {
+  border: 1px solid var(--design-border-color);
+  border-radius: 0.2em;
+  padding: 0.4em 0.5em;
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  transition: all 0.2s;
+  &--focus {
+    border-color: var(--design-primary-color);
+  }
+  &:hover {
+    border-color: var(--design-primary-color);
+  }
+
+  .input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0;
+    background-color: transparent;
+    color: var(--design-text-color1);
+  }
+  .prefix {
+    font-size: 0.8em;
+  }
+  .suffix {
+    font-size: 0.8em;
+  }
+}
+
+.InputSizeUnit {
+  border: none;
+  outline: none;
+  font-size: 0.8em;
+  color: var(--design-text-color1);
+  &::-ms-expand {
+    color: var(--design-text-color1);
+  }
+}
+
+.DesignTextarea {
+  padding: 0.5em;
+  border-radius: 0.3em;
+  height: 5em;
+  border-color: var(--design-border-color);
+  resize: none;
+  outline: none;
+  color: #333;
+  font-size: 0.8em;
+  background-color: transparent;
+  color: var(--design-text-color1);
+  transition: all 0.2s;
+  &--focus {
+    border-color: var(--design-primary-color);
+  }
+  &:hover {
+    border-color: var(--design-primary-color);
+  }
+}

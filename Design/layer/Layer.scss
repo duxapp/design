@@ -1,0 +1,132 @@
+.Layer {
+  width: 16em;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--design-page-color);
+
+  .ScrollView {
+    overflow-x: auto;
+  }
+
+  .item-add {
+    position: absolute;
+    height: 1px;
+    flex-shrink: 0;
+    background-color: #666;
+    margin-left: 2em;
+    min-width: 15em;
+
+    &.top {
+      top: -1px;
+    }
+
+    &.bottom {
+      bottom: -1px;
+    }
+  }
+
+  .item {
+    cursor: pointer;
+    height: 2.2em;
+    position: relative;
+    border-radius: 0.2em;
+
+    &.hover {
+      opacity: 0.6;
+    }
+
+    &.insert {
+      background-color: var(--design-primary-color);
+
+      .text {
+        color: #fff;
+      }
+
+      .expand {
+        border-color: #fff;
+      }
+    }
+
+    .expand {
+      width: 0.5em;
+      margin: 0.5em;
+      border: 0 solid var(--design-text-color1);
+      border-width: 1PX 1PX 0 0;
+      aspect-ratio: 1;
+      transform: rotate(45deg) translateY(25%);
+      transform-origin: 65% center;
+      color: #333;
+      transition: transform 0.3s;
+
+      &.hide {
+        opacity: 0;
+      }
+
+      &.unfold {
+        transform: rotate(135deg);
+      }
+    }
+
+    .icon-img {
+      width: 1em;
+      height: 1em;
+      margin-right: 0.2em;
+    }
+
+    .icon {
+      font-size: 1em;
+      margin-right: 0.2em;
+    }
+
+    .text {
+      font-size: 0.75em;
+      color: var(--design-text-color1);
+      flex: 1;
+      width: 0;
+      white-space: nowrap;
+    }
+
+    &:hover {
+      background-color: var(--design-primary-color);
+      opacity: 0.7;
+
+      .expand {
+        border-color: #fff;
+      }
+
+      .icon {
+        color: #fff;
+      }
+
+      .text {
+        color: #fff;
+      }
+    }
+
+    &.select {
+      background-color: var(--design-primary-color);
+
+      &:hover {
+        background-color: var(--design-primary-color);
+      }
+
+      .expand {
+        border-color: #fff;
+      }
+
+      .icon {
+        color: #fff;
+      }
+
+      .text {
+        color: #fff;
+      }
+    }
+  }
+
+  @for $i from 0 to 50 {
+    .level-#{$i} {
+      padding-left: 0.5em * $i;
+    }
+  }
+}

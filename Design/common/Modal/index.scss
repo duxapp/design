@@ -1,0 +1,52 @@
+.DesignModal {
+  font-size: 16Px;
+  position: absolute;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, .5);
+  transition: opacity 0.2s;
+  div {
+    box-sizing: border-box;
+  }
+
+  &>.mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &>.content {
+    background-color: var(--design-page-color);
+    border-radius: 0.4em;
+    transform: scale(0);
+    transition: all 0.2s;
+    taro-view-core {
+      display: flex;
+    }
+  }
+
+  &.show {
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+
+    &>.content {
+      transform: scale(1);
+    }
+  }
+
+  &.close {
+    width: 100%;
+    height: 100%;
+  }
+}

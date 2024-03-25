@@ -1,0 +1,26 @@
+.DesignTab {
+  gap: 0.8em;
+
+  .item {
+    gap: 0.3em;
+    cursor: pointer;
+
+    .name {
+      font-size: 0.95em;
+      transition: all 0.2s;
+    }
+
+    .line {
+      height: 2PX;
+      transition: all 0.2s;
+    }
+    &.select {
+      .name {
+        color: var(--design-primary-color);
+      }
+      .line {
+        background-color: var(--design-primary-color);
+      }
+    }
+  }
+}

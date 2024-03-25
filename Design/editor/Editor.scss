@@ -1,0 +1,19 @@
+.DesignEditor {
+  min-height: 30em;
+  width: 750px;
+  height: 100%;
+  margin-bottom: 0.5em;
+  border-radius: 0.25em;
+  position: relative;
+
+  .Design-el-hover {
+    outline: 2Px dashed #999;
+    outline-offset: -1px;
+  }
+
+  .Design-el-select {
+    outline: 2Px dashed #727272;
+    outline-color: var(--design-primary-color);
+    outline-offset: -1px;
+  }
+}

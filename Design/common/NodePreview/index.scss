@@ -1,0 +1,25 @@
+.DesignNodePreview {
+  position: relative;
+  overflow: hidden;
+  min-height: 1em;
+  &>.content {
+    background-color: $duxappPageColor;
+    position: absolute;
+    width: 750px;
+    transform-origin: 0 0;
+    border-radius: 0.6em;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  &>.mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    border-radius: 0.6em;
+    border: 1px solid $duxappPageColor;
+  }
+}

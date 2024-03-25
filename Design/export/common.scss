@@ -1,0 +1,29 @@
+.ExportCode {
+  code {
+    user-select: text;
+    font-size: 0.9em;
+  }
+}
+
+.ExportPage {
+  // padding: 0.8em;
+  border-radius: 0.4em;
+
+  .head {
+    padding: 0.6em;
+    border-bottom: 1PX solid var(--design-line-color);
+    .title {
+      font-size: 1em;
+    }
+  }
+
+  .scroll-main {
+    width: 80vw;
+    max-height: 48em;
+    overflow: auto;
+
+    .ExportCode {
+      margin: 0;
+    }
+  }
+}

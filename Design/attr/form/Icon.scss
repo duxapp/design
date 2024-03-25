@@ -1,0 +1,65 @@
+.DesignIcon {
+  border: 1px solid var(--design-border-color);
+  width: 2.4em;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 0.2em;
+
+  .icon {
+    font-size: 2em;
+  }
+
+  .add {
+    font-size: 0.8em;
+  }
+
+  &:hover {
+    border-color: var(--design-primary-color);
+
+    .add {
+      color: var(--design-primary-color);
+    }
+  }
+
+}
+
+.DesignIconPop {
+  width: 60%;
+  padding: 1em;
+  gap: 0.6em;
+  display: flex;
+  flex-direction: column;
+
+  .scroll {
+    height: 36em;
+  }
+
+  .icons {
+    display: grid;
+    grid-auto-flow: row;
+    column-gap: 0.2em;
+    row-gap: 0.8em;
+    grid-template-columns: repeat(auto-fill, 6em);
+    // justify-content: space-between;
+
+    .item {
+      align-items: center;
+      width: 6em;
+      overflow: hidden;
+
+      .icon {
+        font-size: 2em;
+        color: var(--design-text-color1);
+      }
+
+      .name {
+        font-size: 0.75em;
+        text-align: center;
+        word-break: break-all;
+      }
+    }
+  }
+}

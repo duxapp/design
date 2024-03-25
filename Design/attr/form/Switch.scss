@@ -1,0 +1,9 @@
+.DesignSwitch {
+  transform-origin: 0%;
+  transform: scale(0.7, 0.7);
+  .weui-switch {
+    &::after {
+      background-color: var(--design-text-color4);
+    }
+  }
+}

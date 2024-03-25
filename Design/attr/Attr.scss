@@ -1,0 +1,19 @@
+.Attr {
+  width: 16em;
+  padding: 0.4em 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--design-page-color);
+
+  &>.tab {
+    padding: 0.4em 0.8em;
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 0.8em;
+  }
+}

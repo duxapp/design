@@ -1,0 +1,21 @@
+// 全局弹出菜单样式
+.global-menus {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  box-shadow: 0 0 2Px 1Px #f2f2f2;
+
+  .item {
+    font-size: 16Px;
+    padding: 8Px 20Px;
+    color: var(--design-text-color1);
+
+    &:hover {
+      background-color: var(--design-page-color);
+    }
+  }
+}

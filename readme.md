@@ -16,14 +16,25 @@ yarn duxapp app add design
 ```
 此模块需要在 [duxapp 框架](https://app.docs.dux.plus) 中运行
 
+此模块只包含了编辑器的核心代码，如果你需要开箱即用，可以安装 `designExample` 模块
+
+```bash
+yarn duxapp app add designExample
+```
+
+然后运行下面的命令，即可查看到效果
+```bash
+yarn dev:h5 --app=designExample
+```
+
 ## <a name='feature'></a>特点
 
-- 发布到npm市场，可以很方便的将他集成到你的项目中。
 - 你可以方便的编写一个组件在这个编辑器中运行，或者将你现有的组件经过简单修改运行在编辑器中。
 - 编辑后的数据同时支持小程序、H5、React Native，需在Taro3的项目中使用。
 - 组件样式遵循以React Native样式为基础的Flex布局，可以同时给设计师和开发人员使用。
 - 导出为React组件后，可以继续进行二次开发。
-- 模板市场给你提供了存储和使用模板的功能，你可以通过公开的模板快速创建页面，你也可以根据自己的需求创建模板。
+- 提供模板导入组件，添加模板和模板管理功能需要您进行后续开发
+- 默认提供导出代码组件，您需要手动添加支持，比如在节点右键菜单上
 
 ## <a name='principle'></a>运行原理
 
@@ -33,29 +44,35 @@ yarn duxapp app add design
   {
     "child": [
       {
-        "style": {},
-        "text": "文本内容",
-        "nodeName": "text",
+        "attr": {
+          "style": {},
+          "children": "文本内容"
+        },
+        "tag": "Text",
         "key": "2e0l1-19tg00",
         "child": []
       }
     ],
-    "style": {},
-    "nodeName": "view",
+    "attr": {
+      "style": {}
+    },
+    "tag": "Column",
     "key": "2e0l1VzIiw00"
   }
 ]
 ```
-对应的JSX代码如下，这些组件并不是原生的Taro组件，而是经过封装的，所以你看到下面的`Text`组件的文本并不是这样：`<Text>文本内容<Text>`，而是将文本内容赋值在其text属性上，其他组件的结构也大体如此。
+对应的JSX代码如下
 ```jsx
-<View>
-  <Text text='文本内容' />
-</View>
+<Column>
+  <Text>文本内容</Text>
+</Column>
 ```
 
 ## <a name='example'></a>在线体验
 
-线上体验地址暂未发布
+[http://design.service.dux.cn/](http://design.service.dux.cn/)
+
+- 体验地址中的模板相关功能需要自行实现
 
 ## <a name='hot-key'></a>快捷键支持
 
@@ -72,12 +89,14 @@ delete 删除节点
 ```jsx
 import Taro from '@tarojs/taro'
 import { Column, Row } from '@/duxui'
-import { Design, ComponentList, Editor, Layer, Attr, defineComponentConfigs } from '@/design/components/Design'
+import { Design, ComponentList, Editor, Layer, Attr, defineComponentConfigs } from '@/design/Design'
 import { defineComponents } from '@/design'
-import * as form from '@/duxuiDesign/components/form'
-import * as layout from '@/duxuiDesign/components/layout'
-import * as show from '@/duxuiDesign/components/show'
+import { getMedia } from '@/duxapp/utils/net/util'
+import * as form from '@/duxuiDesign/components/form/config'
+import * as layout from '@/duxuiDesign/components/layout/config'
+import * as show from '@/duxuiDesign/components/show/config'
 import '../../../theme.scss'
+import '../../../app.scss'
 
 import './index.scss'
 
@@ -96,19 +115,22 @@ defineComponentConfigs({
 Taro.initPxTransform({
   designWidth: 375,
   deviceRatio: {
-    375: 2,
-    640: 2.34 / 2,
-    750: process.env.TARO_ENV === 'h5' ? 640 / 750 : 1,
-    828: 1.81 / 2
+    375: 1.25
   }
 })
 
-export default function DuxDesign(props) {
+export default function DuxDesign({ config, ...props }) {
 
-  return <Design {...props}>
+  return <Design config={{ ...defaultConfig, ...config }} {...props}>
     <Row grow justify='between' className='design-page'>
       <ComponentList />
-      <Editor />
+      <div className='center'>
+        <div className='editor'>
+          <div className='phone'>
+            <Editor />
+          </div>
+        </div>
+      </div>
       <Column className='attr-layer'>
         <Layer />
         <Attr />
@@ -116,24 +138,39 @@ export default function DuxDesign(props) {
     </Row>
   </Design>
 }
+
+const defaultConfig = {
+  upload: async (type, option) => {
+    const res = await getMedia(type, option)
+    return res.map(item => item.path)
+  },
+  theme: {
+    dark: false,
+  },
+  link: [
+
+  ]
+}
+
 ```
   
-注意 编辑器仅支持编译成h5使用，请勿在小程序或者app端调用，以及所有从 `@/design/components/Design` 导出的函数和组件都一样。
+注意 编辑器仅支持编译成h5使用，请勿在小程序或者app端调用，以及所有从 `@/design/Design` 导出的函数和组件都一样。
 
 - 渲染模式使用示例
 
 ```jsx
-import { TopView, Create } from '@/design'
+import { TopView, Render } from '@/design'
 
-export default () => {
+export default function PageName() {
   return <TopView>
-    <Create nodes={[]} />
+    <Render nodes={[]} />
   </TopView>
 }
 ```
 
-- 使用提示  
-不论是编辑模式还是渲染模式都请将 `TopView` 组件放在最外层，否则会导致样式错乱，弹窗无法使用
+## 将组件添加到编辑器使用
+
+关于此部分的内容可查看 `designExample` 模块 
 
 ## <a name='group'></a>交流群
 

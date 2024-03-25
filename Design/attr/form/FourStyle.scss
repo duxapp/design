@@ -1,0 +1,21 @@
+.FourStyle-title {
+  .name {
+    font-size: 0.9em;
+  }
+  .expand {
+    font-size: 1.2em;
+    cursor: pointer;
+    color: var(--design-primary-color);
+  }
+}
+
+.FourStyle-items {
+  gap: 0.5em;
+  .item {
+    gap: 0.5em;
+    .name {
+      flex-shrink: 0;
+      font-size: 0.8em;
+    }
+  }
+}

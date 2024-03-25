@@ -3,9 +3,9 @@
  * @param {*} number
  * @returns
  */
+const chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
 const to62 = number => {
-  let chars = '0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHIGKLMNOPQRSTUVWXYZ'.split(''),
-    radix = chars.length,
+  let radix = chars.length,
     qutient = +number,
     arr = [],
     mod
@@ -20,8 +20,8 @@ const to62 = number => {
 let oldTime = 0
 export const getKey = () => {
   const time = Date.now()
-  if (oldTime >= time) {
-    oldTime++
+  if (time <= oldTime) {
+    ++oldTime
   } else {
     oldTime = time
   }

@@ -1,0 +1,140 @@
+.CreateItem {
+  gap: 0.5em;
+
+  .name {
+    font-size: 0.8em;
+  }
+
+  .desc {
+    font-size: 0.7em;
+  }
+}
+
+.TypeRadio {
+  row-gap: 0.5em;
+}
+
+.TypeRadioItem {
+  padding: 0.5em 0.8em;
+  cursor: pointer;
+  font-size: 0.6em;
+  color: var(--design-text-color1);
+  border: 1Px solid var(--design-primary-color);
+  border-left-width: 0;
+  border-right-width: 0;
+  color: var(--design-primary-color);
+
+  &--select {
+    background-color: var(--design-primary-color);
+    color: #fff;
+  }
+
+  &--start {
+    border-left-width: 1Px;
+    border-top-left-radius: 2em;
+    border-bottom-left-radius: 2em;
+  }
+
+  &--end {
+    border-right-width: 1Px;
+    border-top-right-radius: 2em;
+    border-bottom-right-radius: 2em;
+  }
+}
+
+.GroupRender {
+  cursor: pointer;
+
+  .name {
+    font-size: 0.9em;
+  }
+
+  .expand {
+    font-size: 1.2em;
+    width: 0.4em;
+    border: 0 solid var(--design-primary-color);
+    border-width: 1PX 1PX 0 0;
+    aspect-ratio: 1;
+    transform: rotate(45deg) translateY(25%);
+    transform-origin: 75% center;
+    transition: all 0.3s;
+    &--show {
+      transform: rotate(135deg);
+    }
+  }
+}
+
+.ObjectForm {
+  border: 1px solid var(--design-border-color);
+  border-radius: 0.4em;
+  padding: 0.5em;
+  &--name {
+    font-size: 0.9em;
+  }
+}
+
+.ObjectArray {
+  .ObjectArray-add {
+    margin-left: 0.5em;
+    background-color: var(--design-primary-color);
+    width: 1.2em;
+    height: 1.2em;
+    color: #fff;
+    border-radius: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .ObjectArray-item {
+    border: 1px solid var(--design-border-color);
+    border-radius: 0.6em;
+    padding: 0.5em;
+    gap: 0.8em;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .ObjectArray-action {
+      position: absolute;
+      right: -0.5em;
+      top: -0.5em;
+      align-items: center;
+      gap: 0.3em;
+    }
+
+    .ObjectArray-del {
+      background-color: var(--design-text-color4);
+      border: 1px solid var(--design-border-color);
+      width: 1.2em;
+      height: 1.2em;
+      border-radius: 1em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .drag {
+      background-color: var(--design-text-color4);
+      border: 1px solid var(--design-border-color);
+      width: 1.2em;
+      height: 1.2em;
+      padding: 0.3em 0.2em;
+      border-radius: 1em;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: move;
+
+      .drag-line {
+        height: 1px;
+        background-color: var(--design-text-color1);
+      }
+    }
+  }
+}

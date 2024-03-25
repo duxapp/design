@@ -1,0 +1,78 @@
+.DesignClassName {
+  gap: 0.5em;
+  position: relative;
+
+  .show {
+    width: 1.6em;
+    height: 1.6em;
+    border: 1px solid #e9e9e9;
+    border-radius: 0.8em;
+  }
+
+  .input {
+    height: 4em;
+    width: 100%;
+    padding: 0.4em 0.6em;
+    border-width: 1px;
+    outline: none;
+    border: 1px solid var(--design-border-color);
+    border-radius: 0.4em;
+    font-size: 0.8em;
+    width: auto;
+    resize: none;
+    background-color: transparent;
+    color: var(--design-text-color1);
+    transition: all 0.2s;
+  }
+  &--focus {
+    .input {
+      border-color: var(--design-primary-color);
+    }
+  }
+  &:hover {
+    .input {
+      border-color: var(--design-primary-color);
+    }
+  }
+
+  .pop {
+    background-color: var(--design-page-color);
+    position: absolute;
+    z-index: 1;
+    box-shadow: var(--design-text-color3) 0 0 1em;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 20em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.4em;
+
+    .group {
+      padding: 0.5em;
+      gap: 0.5em;
+
+      .groupName {
+        font-size: 0.75em;
+      }
+
+      .list {
+        gap: 0.5em;
+
+        .item {
+          padding: 0.3em 0.4em;
+          border-radius: 0.4em;
+          border: 1px solid var(--design-primary-color);
+          font-size: 0.75em;
+          color: var(--design-primary-color);
+          cursor: pointer;
+
+          &.select {
+            background-color: var(--design-primary-color);
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

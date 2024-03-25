@@ -1,0 +1,24 @@
+.DesignUploadImage {
+  border: 1px solid var(--design-border-color);
+  border-radius: 0.4em;
+  height: 6em;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  overflow: hidden;
+  &:hover {
+    border-color: var(--design-primary-color);
+    .add {
+      color: var(--design-primary-color);
+    }
+  }
+  .img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .add {
+    font-size: 2em;
+  }
+}

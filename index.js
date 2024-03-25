@@ -1,2 +1,3 @@
-export * from './components'
+export * from './Render'
+export * from './Component'
 export * from './utils'

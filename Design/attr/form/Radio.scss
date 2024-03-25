@@ -1,0 +1,27 @@
+.DesignRadio {
+  row-gap: 0.5em;
+}
+.DesignRadioItem {
+  padding: 0.6em 0.5em;
+  cursor: pointer;
+  font-size: 0.75em;
+  color: var(--design-text-color1);
+  border: 1Px solid var(--design-primary-color);
+  border-left-width: 0;
+  border-right-width: 0;
+  color: var(--design-primary-color);
+  &--select {
+    background-color: var(--design-primary-color);
+    color: #fff;
+  }
+  &--start {
+    border-left-width: 1Px;
+    border-top-left-radius: 2em;
+    border-bottom-left-radius: 2em;
+  }
+  &--end {
+    border-right-width: 1Px;
+    border-top-right-radius: 2em;
+    border-bottom-right-radius: 2em;
+  }
+}

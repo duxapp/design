@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "design"; /* Project id 4461752 */
+  src: url('//at.alicdn.com/t/c/font_4461752_ipcnpitbdqp.woff2?t=1710859204365') format('woff2'),
+       url('//at.alicdn.com/t/c/font_4461752_ipcnpitbdqp.woff?t=1710859204365') format('woff'),
+       url('//at.alicdn.com/t/c/font_4461752_ipcnpitbdqp.ttf?t=1710859204365') format('truetype');
+}
+
+.design {
+  font-family: "design" !important;
+}
+
+.design-icon:before {
+  content: "\e600";
+}
+
+.design-component:before {
+  content: "\e730";
+}
+
+.design-template:before {
+  content: "\e6d4";
+}
+
+.design-data-list:before {
+  content: "\e686";
+}
+
+.design-data-bind:before {
+  content: "\e676";
+}

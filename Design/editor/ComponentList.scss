@@ -1,0 +1,55 @@
+.ComponentList {
+  display: flex;
+  background-color: var(--design-page-color);
+
+  .scroll-view {
+    width: 16em;
+  }
+
+  .search {
+    margin: 0.8em 0.8em 0 0.8em;
+    padding: 0.5em 1em;
+    border-radius: 1.5em;
+  }
+
+  .cate {
+    gap: 0.8em;
+    margin-top: 1em;
+    padding: 0 1em;
+
+    // &:nth-child(1) {
+    //   margin-top: 0;
+    // }
+    .cate-name {
+      font-size: 0.9em;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .cate-list {}
+
+    .item {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0.8em 0.2em;
+      gap: 0.5em;
+
+      .icon {
+        width: 2em;
+        height: 2em;
+        object-fit: contain;
+      }
+
+      .icon-text {
+        font-size: 2em;
+        color: var(--design-text-color1);
+      }
+
+      .text {
+        font-size: 0.8em;
+      }
+    }
+  }
+}

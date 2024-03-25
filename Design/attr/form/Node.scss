@@ -1,0 +1,71 @@
+.DesignNode {
+  border: 1px solid var(--design-border-color);
+  border-radius: 0.4em;
+  cursor: pointer;
+  transition: all 0.2s;
+  overflow: hidden;
+
+  &--empty {
+    height: 4em;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &:hover {
+    border-color: var(--design-primary-color);
+
+    .add {
+      color: var(--design-primary-color);
+    }
+  }
+
+  .img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .add {
+    font-size: 0.8em;
+  }
+
+  .tip {
+    font-size: 0.8em;
+  }
+}
+
+.DesignNodePop {
+  min-width: 80vw;
+  height: 56em;
+  background-color: #f2f2f2;
+  border-radius: 0.4em;
+  overflow: hidden;
+  .head {
+    padding: 0.6em;
+    align-items: center;
+    gap: 0.8em;
+    background-color: var(--design-page-color);
+    border-bottom: 1PX solid var(--design-line-color);
+    .title {
+      flex: 1;
+      font-size: 0.95em;
+      font-weight: bold;
+    }
+    .cancel {
+      border: 1PX solid var(--design-text-color1);
+      border-radius: 0.2em;
+      padding: 0.2em 0.8em;
+      font-size: 0.9em;
+      cursor: pointer;
+    }
+    .submit {
+      border: 1PX solid var(--design-primary-color);
+      background-color: var(--design-primary-color);
+      border-radius: 0.2em;
+      padding: 0.2em 0.8em;
+      font-size: 0.9em;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+}
