@@ -131,5 +131,5 @@ export const filterProps = props => {
  * @returns
  */
 export const isNodeAttr = data => {
-  return Array.isArray(data) && data.length > 0 && data[0].key && data[0].tag && data[0].attr && data[0].child
+  return Array.isArray(data) && data.length > 0 && data[0] && typeof data[0] === 'object' && data[0].key && data[0].tag && data[0].attr && data[0].child
 }

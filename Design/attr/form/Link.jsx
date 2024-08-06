@@ -33,7 +33,7 @@ export const Link = ({
 
   return <Row className={classNames('DesignLink', focus && 'DesignLink--focus')} items='center'>
     <div className='value'>
-      <input className='input' value={value} onChange={onChange}
+      <input className='input' value={value} onChange={e => onChange(e.target.value)}
         onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}
       />

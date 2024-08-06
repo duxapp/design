@@ -70,7 +70,7 @@ yarn dev:h5 --app=designExample
 
 ## <a name='example'></a>在线体验
 
-[http://design.service.dux.cn/](http://design.service.dux.cn/)
+[https://design.duxapp.cn/](https://design.duxapp.cn/)
 
 - 体验地址中的模板相关功能需要自行实现
 

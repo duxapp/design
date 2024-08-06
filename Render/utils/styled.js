@@ -48,6 +48,11 @@ export const styleConfig = {
     type: styleType.sizePercent,
   },
 
+  gap: {
+    text: '子元素间距',
+    type: styleType.size,
+  },
+
   opacity: {
     text: '不透明度',
     default: 1,
